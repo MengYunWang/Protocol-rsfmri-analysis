@@ -80,3 +80,5 @@ docker run -it --rm -v ~/Desktop/BBSC/functional:/data:ro \
                     
 4. FSL preprocessing
 
+https://open.win.ox.ac.uk/pages/fslcourse/website/online_materials.html#Prep
+
