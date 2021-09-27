@@ -78,3 +78,5 @@ docker run -it --rm -v ~/Desktop/BBSC/functional:/data:ro \
                     
                     
                     
+4. FSL preprocessing
+
