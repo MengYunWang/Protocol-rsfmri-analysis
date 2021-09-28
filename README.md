@@ -79,9 +79,33 @@ docker run -it --rm -v ~/Desktop/BBSC/functional:/data:ro \ # absolute path for 
                     /data  /out  participant \ # indicate which level should be analyzed
                     --verbose-reports
 ```                    
-                                      
+### Which result or parameter should we look at or emphasize on?###
+
+- Structual data (T1 image)
+
+
+- Funciotnal data (T2* image)
+
+structual 
+
+functional
+
 
 ## 4. FSL preprocessing
 
 [Official fsl course](https://open.win.ox.ac.uk/pages/fslcourse/website/online_materials.html#Prep)
+
+My protocol to analyzed the rs-fMRI data
+
+
+
+
+
+
+
+
+
+
+
+
 
