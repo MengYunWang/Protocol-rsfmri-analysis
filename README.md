@@ -79,12 +79,12 @@ docker run -it --rm -v ~/Desktop/BBSC/functional:/data:ro \ # absolute path for 
                     /data  /out  participant \ # indicate which level should be analyzed
                     --verbose-reports
 ```                    
-### Which result or parameter should we look at or emphasize on?###
+### Which result or parameter should we look at or emphasize on?
 
-- Structual data (T1 image)
+#### (1) Structual data (T1 image)
 
 
-- Funciotnal data (T2* image)
+#### (2) Funciotnal data (T2* image)
 
 structual 
 
