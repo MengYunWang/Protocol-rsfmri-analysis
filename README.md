@@ -1,4 +1,4 @@
-# Protocol-rsfmri-analysis
+# My protocol of analyzing rsfMRI data
 
 [How to analyze the rs-fMRI](https://www.ohbmbrainmappingblog.com/blog/ohbm-ondemand-how-to-resting-state-fmri-analysis)
 
@@ -39,7 +39,7 @@ Moreton, F. C., Dani, K. A., Goutcher, C., O'Hare, K., & Muir, K. W. (2016). [**
 
 - **Loose connectors**
 
-
+We could do something about the ***psysioligical noise*** with nuisanse regreesion, ICA or GSR, but little can do with the other two. If there are some issues related to the second and third factors, you should contact technician or physicist, or even better, buy a new one! :sunglasses: :dollar:	
 
 ## 2. Practical tips to record rs-fmri data
 
@@ -48,6 +48,7 @@ Moreton, F. C., Dani, K. A., Goutcher, C., O'Hare, K., & Muir, K. W. (2016). [**
 Patriat, R., Molloy, E. K., Meier, T. B., Kirk, G. R., Nair, V. A., Meyerand, M. E., ... & Birn, R. M. (2013). The effect of resting condition on resting-state fMRI reliability and consistency: a comparison between [**resting with eyes open, closed, and fixated**](https://doi.org/10.1016/j.neuroimage.2013.04.013). Neuroimage, 78, 463-473.
 
 ### (2) Sleep, awake or alert
+Well, at least the participants should be awake!
 
 ### (3) Length of recording --- **_12 mins_**
 
@@ -67,7 +68,7 @@ Diaz, B. A., Van Der Sluis, S., Moens, S., Benjamins, J. S., Migliorati, F., Sto
 
 
 ## 3. Quality check the data with MRIqc
-Power, J. D. (2017). A simple but useful way to [**assess fMRI scan qualities**](https://doi.org/10.1016/j.neuroimage.2016.08.009). Neuroimage, 154, 150-158. *** 
+Power, J. D. (2017). A simple but useful way to [**assess fMRI scan qualities**](https://doi.org/10.1016/j.neuroimage.2016.08.009). Neuroimage, 154, 150-158.
 
 Software: Esteban O, Birman D, Schaer M, Koyejo OO, Poldrack RA, Gorgolewski KJ; [**MRIQC**](https://mriqc.readthedocs.io/en/latest/index.html): Advancing the Automatic Prediction of Image Quality in MRI from Unseen Sites; PLOS ONE 12(9):e0184661. 
 
@@ -82,15 +83,27 @@ docker run -it --rm -v ~/Desktop/BBSC/functional:/data:ro \ # absolute path for 
 ### Which result or parameter should we look at or emphasize on?
 
 #### (1) Structual data (T1 image)
+- Technical quality: **E**ntropy **F**ocus **C**ritieria (***EFC***); **F**ull **W**idth at **H**alf **M**aximum (***FWHM***)
 
+  **EFC**: the ***lower*** the better;
+
+  **FWHM**: the ***lower*** the better;
+
+- Physiological variation: **S**ignal to **N**oise **R**atio (***SNR***)
+
+  **SNR**: the ***higher*** the better;
 
 #### (2) Funciotnal data (T2* image)
+- Spatial info
+ 
+  **EFC**: the ***lower*** the better;
 
-structual 
-
-functional
-
-
+  **FWHM**: the ***lower*** the better;
+- Temporal info: **F**ramewise **D**isplacement(***FD***); **DVRS** (D:temporal Derivative of timecourses; VRS:root mean square variance over voxels)
+ 
+  **FD**:the ***lower*** the better (0.2-0.5 mm);
+  
+  **DVRS**:the ***lower*** the better;
 ## 4. FSL preprocessing
 
 [Official fsl course](https://open.win.ox.ac.uk/pages/fslcourse/website/online_materials.html#Prep)
