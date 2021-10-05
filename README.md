@@ -108,9 +108,26 @@ docker run -it --rm -v ~/Desktop/BBSC/functional:/data:ro \ # absolute path for 
 
 [Official fsl course](https://open.win.ox.ac.uk/pages/fslcourse/website/online_materials.html#Prep)
 
-My protocol to analyzed the rs-fMRI data
+### My protocol to analyzed the rs-fMRI data
 
+(1) Unix commands
 
+[Frequently used commands](https://www.youtube.com/playlist?list=PLvgasosJnUVnnFifxecbyEno7jnqrl8fQ)
+
+[Other useful commands](https://fsl.fmrib.ox.ac.uk/fslcourse/lectures/scripting/all.htm)
+
+(2) FSL basic knowledge
+
+[FSLeyes](https://open.win.ox.ac.uk/pages/fsl/fsleyes/fsleyes/userdoc/index.html)
+
+[FSLUTILS](https://open.win.ox.ac.uk/pages/fslcourse/practicals/intro3/index.html)
+
+(3) 
+Brain Extraction Tool:
+
+FEAT:
+
+FLERT:
 
 
 
