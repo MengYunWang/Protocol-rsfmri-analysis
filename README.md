@@ -3,6 +3,7 @@
 [How to analyze the rs-fMRI](https://www.ohbmbrainmappingblog.com/blog/ohbm-ondemand-how-to-resting-state-fmri-analysis)
 
 ## 1. [Noisy bussiness](https://www.youtube.com/watch?v=fvv2dr3pT7I) 
+(Signal is accounted for ***~2%*** of recording data)
 
 Caballero-Gaudes, C., & Reynolds, R. C. (2017). Methods for [**cleaning the BOLD fMRI signal**](https://doi.org/10.1016/j.neuroimage.2016.12.018). Neuroimage, 154, 128-149.
 
@@ -14,17 +15,17 @@ Murphy, K., & Fox, M. D. (2017). Towards a consensus regarding [**global signal 
 
 ### (1) Physiological noise
 
-- **Head movement**
+- **Head movement** (Translation: X Y Z; Rotation: Pitch, Roll, Yaw)
 
 Power, J. D., Barnes, K. A., Snyder, A. Z., Schlaggar, B. L., & Petersen, S. E. (2012). Spurious but systematic correlations in functional connectivity MRI networks arise from [**subject motion**](https://doi.org/10.1016/j.neuroimage.2011.10.018). Neuroimage, 59(3), 2142-2154.  ***FD; DVARS***
 
 Ciric, R., Wolf, D. H., Power, J. D., Roalf, D. R., Baum, G. L., Ruparel, K., ... & Satterthwaite, T. D. (2017). Benchmarking of participant-level confound regression strategies for the control of **motion artifact** in studies of functional connectivity. Neuroimage, 154, 174-187.
 
-- **Cardiac pulse**
+- **Cardiac pulse** (~1Hz)
 
 Bulte, D., & Wartolowska, K. (2017). Monitoring [**cardiac and respiratory**](https://doi.org/10.1016/j.neuroimage.2016.12.001) physiology during FMRI. Neuroimage, 154, 81-91.
 
-- **Respitory breath**
+- **Respitory breath** (~0.3Hz)
 
 Moreton, F. C., Dani, K. A., Goutcher, C., O'Hare, K., & Muir, K. W. (2016). [**Respiratory**](https://doi.org/10.1016/j.nicl.2016.05.003) challenge MRI: practical aspects. NeuroImage: Clinical, 11, 667-677.
 
@@ -110,29 +111,61 @@ docker run -it --rm -v ~/Desktop/BBSC/functional:/data:ro \ # absolute path for 
 
 ### My protocol to analyzed the rs-fMRI data
 
-(1) Unix commands
+#### (1) Unix commands basic knowledge
 
 [Frequently used commands](https://www.youtube.com/playlist?list=PLvgasosJnUVnnFifxecbyEno7jnqrl8fQ)
 
 [Other useful commands](https://fsl.fmrib.ox.ac.uk/fslcourse/lectures/scripting/all.htm)
 
-(2) FSL basic knowledge
+#### (2) FSL basic knowledge
 
 [FSLeyes](https://open.win.ox.ac.uk/pages/fsl/fsleyes/fsleyes/userdoc/index.html)
 
 [FSLUTILS](https://open.win.ox.ac.uk/pages/fslcourse/practicals/intro3/index.html)
 
-(3) 
-Brain Extraction Tool:
+#### (3) FSL maintools
 
-FEAT:
+**FEAT**(FMRI Expert Analysis Tool): processing streamline
 
-FLERT:
+- Brain ***Extraction*** Tool(**BET**):
 
+- FMRIB´S Linear Image ***Registration*** Tool(**FLIRT**): within subjects (ex. EPI_2_T1)
 
+    -Cost function: measure the 'goodness' of religment two images, lower better
+      
+      Least Squares: Same modality
+      
+      Normalised Correlation: Same modality
+      
+      Correlation Ratio: Any MR modalities
+      
+      Mutual Information: Any Modalities
+      
+      Normalised Mutual Info.: Any modalities
+      
+      Boundary-Based Registration: Within-subject EPI to structural---6DOF(rigid body:3_tranlation+3_rotation); 
+                                   Initialising non-linear registration---12DOF(6_DOF+3_scallings+3_skews/shears)
+    
+    -Interpolation: creat new adopted images
+      
+      Nearest Neighbour
+      
+      Trilinear
+      
+      Spline
+      
+      Sinc
+      
+      K-Space methods
 
+- FMRIB´S Non-linear Image Registration Tool(**FNIRT**): between subjects, same modality (ex. T1_2_Standard)
 
+    -Cost function: 
+      Least Squares (ONLY)
 
+- (**MELODIC**): ICA processing 
+
+**FDT**(): DTI processing streamline
 
 
 
