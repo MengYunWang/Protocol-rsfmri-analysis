@@ -127,8 +127,14 @@ docker run -it --rm -v ~/Desktop/BBSC/functional:/data:ro \ # absolute path for 
 
 **FEAT**(FMRI Expert Analysis Tool): processing streamline
 
-- Brain ***Extraction*** Tool(**BET**):
+- Brain ***Extraction*** Tool(**BET**): get rid of the skull
 
+- FMRIB´S Automated ***Segmentation*** Tool(**FAST**): segmentation of GM WM CSF (pacellation)
+
+- FMRIB´S Intergrated ***Registration & Segmentation*** Tool(**FLIRT**): segmentation of subcortical brain
+
+- Brain Internsity ***AbNormalities*** Classificaiton Algorithm (**BIANCA**): lesion/WMH segmentation
+ 
 - FMRIB´S Linear Image ***Registration*** Tool(**FLIRT**): within subjects (ex. EPI_2_T1)
 
     -Cost function: measure the 'goodness' of religment two images, lower better
