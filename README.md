@@ -21,11 +21,11 @@ Power, J. D., Barnes, K. A., Snyder, A. Z., Schlaggar, B. L., & Petersen, S. E. 
 
 Ciric, R., Wolf, D. H., Power, J. D., Roalf, D. R., Baum, G. L., Ruparel, K., ... & Satterthwaite, T. D. (2017). Benchmarking of participant-level confound regression strategies for the control of **motion artifact** in studies of functional connectivity. Neuroimage, 154, 174-187.
 
-- **Cardiac pulse** (~1Hz)
+- **Cardiac pulse** (~1Hz) (Heart Rate)
 
 Bulte, D., & Wartolowska, K. (2017). Monitoring [**cardiac and respiratory**](https://doi.org/10.1016/j.neuroimage.2016.12.001) physiology during FMRI. Neuroimage, 154, 81-91.
 
-- **Respitory breath** (~0.3Hz)
+- **Respitory breath** (~0.3Hz) (**RVT**:Respitory Volum per Time)
 
 Moreton, F. C., Dani, K. A., Goutcher, C., O'Hare, K., & Muir, K. W. (2016). [**Respiratory**](https://doi.org/10.1016/j.nicl.2016.05.003) challenge MRI: practical aspects. NeuroImage: Clinical, 11, 667-677.
 
@@ -131,7 +131,7 @@ docker run -it --rm -v ~/Desktop/BBSC/functional:/data:ro \ # absolute path for 
 
 - FMRIB´S Automated ***Segmentation*** Tool(**FAST**): segmentation of GM WM CSF (pacellation)
 
-- FMRIB´S Intergrated ***Registration & Segmentation*** Tool(**FLIRT**): segmentation of subcortical brain
+- FMRIB´S Intergrated ***Registration & Segmentation*** Tool(**FIRST**): segmentation of subcortical brain
 
 - Brain Internsity ***AbNormalities*** Classificaiton Algorithm (**BIANCA**): lesion/WMH segmentation
  
@@ -170,6 +170,7 @@ docker run -it --rm -v ~/Desktop/BBSC/functional:/data:ro \ # absolute path for 
       Least Squares (ONLY)
 
 - (**MELODIC**): ICA processing 
+- ***Physiological Noise Model*** (**PNM**):correct respiratory, cardiac confounds
 
 **FDT**(): DTI processing streamline
 
