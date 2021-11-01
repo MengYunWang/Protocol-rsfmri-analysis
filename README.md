@@ -53,6 +53,8 @@ Patriat, R., Molloy, E. K., Meier, T. B., Kirk, G. R., Nair, V. A., Meyerand, M.
 ### (2) Sleep, awake or alert
 Well, at least the participants should be awake!
 
+Tagliazucchi, E., & Laufs, H. (2014). Decoding wakefulness levels from typical fMRI resting-state data reveals reliable drifts [**between wakefulness and sleep**](https://doi.org/10.1016/j.neuron.2014.03.020). Neuron, 82(3), 695-708.
+
 ### (3) Length of recording --- **_12 mins_**
 
 Birn, R. M., Molloy, E. K., Patriat, R., Parker, T., Meier, T. B., Kirk, G. R., ... & Prabhakaran, V. (2013). The effect of [**scan length**](https://doi.org/10.1016/j.neuroimage.2013.05.099) on the reliability of resting-state fMRI connectivity estimates. Neuroimage, 83, 550-558.
