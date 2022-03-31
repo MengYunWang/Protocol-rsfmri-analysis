@@ -26,7 +26,7 @@ for sub in `cat ./Raw_data/subjList.txt`; do
         mkdir $sespath/func
 
 
-        dcm2niix -b y -z y -f ${sub}_ses-${ses_num}_T1W -o $sespath/anat/ ./Raw_data/$sub/$ses_name/*_Sag_FSPGR_3D/ 
+        dcm2niix -b y -z y -f ${sub}_ses-${ses_num}_T1w -o $sespath/anat/ ./Raw_data/$sub/$ses_name/*_Sag_FSPGR_3D/ 
 
         dcm2niix -b y -z y -f ${sub}_ses-${ses_num}_task-rest_bold -o $sespath/func/ ./Raw_data/$sub/$ses_name/*_fMRI_default_restate/
         cd ./$sespath/func/   
