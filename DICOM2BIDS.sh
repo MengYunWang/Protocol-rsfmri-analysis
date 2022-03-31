@@ -29,10 +29,10 @@ for sub in `cat ./Raw_data/subjList.txt`; do
         dcm2niix -b y -z y -f ${sub}_ses-${ses_num}_T1w -o $sespath/anat/ ./Raw_data/$sub/$ses_name/*_Sag_FSPGR_3D/ 
 
         dcm2niix -b y -z y -f ${sub}_ses-${ses_num}_task-rest_bold -o $sespath/func/ ./Raw_data/$sub/$ses_name/*_fMRI_default_restate/
-        cd ./$sespath/func/   
-        echo "$(jq '. += {"TaskName": "rest"}' ${sub}_ses-${ses_num}_task-rest_bold.json)" > ${sub}_ses-${ses_num}_task-rest_bold.json
+        #cd ./$sespath/func/   
+        #echo "$(jq '. += {"TaskName": "rest"}' ${sub}_ses-${ses_num}_task-rest_bold.json)" > ${sub}_ses-${ses_num}_task-rest_bold.json
         
-        cd $filepath
+        #cd $filepath
     done
     
 done
