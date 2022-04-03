@@ -1,6 +1,6 @@
 #!/bin/bash
 # Created by M.Y. WANG
-
+# 03.April.2022
 
 # Organize the data into BIDS format
 
