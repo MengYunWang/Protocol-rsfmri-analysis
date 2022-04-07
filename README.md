@@ -86,7 +86,7 @@ docker run -it --rm -v ~/Desktop/BBSC/functional:/data:ro \ # absolute path for 
                     --verbose-reports
 ```                    
 ### Which result or parameter should we look at or emphasize on?
-
+[Meaning of the following indices](https://preprocessed-connectomes-project.org/quality-assessment-protocol/)
 #### (1) Structual data (T1 image)
 - Technical quality: **E**ntropy **F**ocus **C**ritieria (***EFC***); **F**ull **W**idth at **H**alf **M**aximum (***FWHM***)
 
