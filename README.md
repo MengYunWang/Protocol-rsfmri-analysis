@@ -173,7 +173,7 @@ docker run -it --rm -v ~/Desktop/BBSC/functional:/data:ro \ # absolute path for 
     -Cost function: 
       Least Squares (ONLY)
 
-- (**MELODIC**): ICA processing 
+- Multivariate Exploratory Linear Optimized Decomposition into Independent Components(**MELODIC**): ICA processing 
 - ***Physiological Noise Model*** (**PNM**):correct respiratory, cardiac confounds
 
 **FDT**(): DTI processing streamline
