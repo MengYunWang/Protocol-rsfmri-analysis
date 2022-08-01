@@ -184,9 +184,16 @@ docker run -it --rm -v ~/Desktop/BBSC/functional:/data:ro \ # absolute path for 
 #### (1) Preprocessing
 Dicom transf > Slice time correction > Registration > Normalization > Smooth
 
-- Open FEAT gui, and go through one subject and save or find the the degsin.fsf file in the .feat directory
-- run the script preprocessing_fsl.sh for multi sub or runs 
-- 
+- Open FEAT gui, and go through one subject and save or find the the degsin.fsf file in the .feat directory, then rename it as you want, ***rs_prep*** in this example 
+- run the script ***pre_processing_fsl.sh*** for multi sub or runs 
+
+After running, a directory end with .feat will be created, which contains the following info:
+
+- ****mc**** directory contains info about motion correction, such as roation and translation and FD which can used in cleaning data
+- ****reg**** directory contains info about registration, such as from fun2str, str2standard
+- ****ica**** directory contains info about ICA
+- ****filtered_func_data.nii.gz**** is the processed data after the preprocessing
+- ****design.fsf**** contains all the parameters used in the preprocessing
 
 #### (2) Clean the re-fMRI data
 Methods: ICA cleaning; Volume sensoring; Nuisance Regression; Global signal regression; Physiology noise regression; Low pass temporal filtering; 
