@@ -184,8 +184,8 @@ docker run -it --rm -v ~/Desktop/BBSC/functional:/data:ro \ # absolute path for 
 #### (1) Preprocessing
 Dicom transf > Slice time correction > Registration > Normalization > Smooth
 
-- Open FEAT gui, and go through one subject and save the 
-- run the script for multi sub or runs 
+- Open FEAT gui, and go through one subject and save or find the the degsin.fsf file in the .feat directory
+- run the script preprocessing_fsl.sh for multi sub or runs 
 - 
 
 #### (2) Clean the re-fMRI data
