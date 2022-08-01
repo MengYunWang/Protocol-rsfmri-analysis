@@ -109,11 +109,9 @@ docker run -it --rm -v ~/Desktop/BBSC/functional:/data:ro \ # absolute path for 
   **FD**:the ***lower*** the better (0.2-0.5 mm);
   
   **DVRS**:the ***lower*** the better;
-## 4. FSL preprocessing
+## 4. FSL
 
 [Official fsl course](https://open.win.ox.ac.uk/pages/fslcourse/website/online_materials.html#Prep)
-
-### My protocol to analyzed the rs-fMRI data
 
 #### (1) Unix commands basic knowledge
 
@@ -129,7 +127,7 @@ docker run -it --rm -v ~/Desktop/BBSC/functional:/data:ro \ # absolute path for 
 
 #### (3) FSL maintools
 
-**FEAT**(FMRI Expert Analysis Tool): processing streamline
+**Segmentaion**
 
 - Brain ***Extraction*** Tool(**BET**): get rid of the skull
 
@@ -139,6 +137,8 @@ docker run -it --rm -v ~/Desktop/BBSC/functional:/data:ro \ # absolute path for 
 
 - Brain Internsity ***AbNormalities*** Classificaiton Algorithm (**BIANCA**): lesion/WMH segmentation
  
+**Registration**
+
 - FMRIB´S Linear Image ***Registration*** Tool(**FLIRT**): within subjects (ex. EPI_2_T1)
 
     -Cost function: measure the 'goodness' of religment two images, lower better
@@ -173,13 +173,13 @@ docker run -it --rm -v ~/Desktop/BBSC/functional:/data:ro \ # absolute path for 
     -Cost function: 
       Least Squares (ONLY)
 
+**FEAT**(FMRI Expert Analysis Tool): processing streamline
+
 - Multivariate Exploratory Linear Optimized Decomposition into Independent Components(**MELODIC**): ICA processing 
 - ***Physiological Noise Model*** (**PNM**):correct respiratory, cardiac confounds
 
-**FDT**(MRIB’s Diffusion Toolbox): DTI processing streamline
+**FDT**(FMRIB’s Diffusion Toolbox): DTI processing streamline
 
-
-
-
+## 5. My protocol to analyzed the rs-fMRI data
 
 
