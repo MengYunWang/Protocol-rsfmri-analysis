@@ -35,14 +35,14 @@ for sub in `cat ./Pre_processing/subjList.txt`; do
      # Note that we are using the | character to delimit the patterns
      # instead of the usual / character because there are / characters
      # in the pattern.
-     cd ./Pre_processing
-     sed -i '' "s|sub-1|${sub}|g" rs_prep.fsf
-     sed -i '' "s|ses-1|${ses_name}|g" rs_prep.fsf
+     
+     sed -i '' "s|sub-1|${sub}|g" ./Pre_processing/rs_prep.fsf
+     sed -i '' "s|ses-1|${ses_name}|g" ./Pre_processing/rs_prep.fsf
 
      # Now everything is set up to run feat
      echo "===> Starting to run feat"
-     feat rs_prep.fsf
+     feat ./Pre_processing/rs_prep.fsf
     done
     # Go back to the initial directory, and repeat the sub loop
-    cd ..
+
 done
