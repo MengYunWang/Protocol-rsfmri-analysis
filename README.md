@@ -181,5 +181,19 @@ docker run -it --rm -v ~/Desktop/BBSC/functional:/data:ro \ # absolute path for 
 **FDT**(FMRIB’s Diffusion Toolbox): DTI processing streamline
 
 ## 5. My protocol to analyzed the rs-fMRI data
+#### (1) Preprocessing
+Dicom transf > Slice time correction > Registration > Normalization > Smooth
+
+- Open FEAT gui, and go through one subject and save the 
+- run the script for multi sub or runs 
+- 
+
+#### (2) Clean the re-fMRI data
+Methods: ICA cleaning; Volume sensoring; Nuisance Regression; Global signal regression; Physiology noise regression; Low pass temporal filtering; 
+
+
+#### (3) Further analysis
+
+
 
 
