@@ -185,7 +185,7 @@ docker run -it --rm -v ~/Desktop/BBSC/functional:/data:ro \ # absolute path for 
 Dicom transf > Slice time correction > Registration > Normalization > Smooth
 
 - Open FEAT gui, and go through one subject and save or find the the degsin.fsf file in the .feat directory, then rename it as you want, ***rs_prep*** in this example 
-- run the script ***pre_processing_fsl.sh*** for multi sub or runs 
+- run the script ***pre_processing.sh*** for multi sub or runs 
 
 After running, a directory end with .feat will be created, which contains the following info:
 
