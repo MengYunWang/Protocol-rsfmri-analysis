@@ -35,7 +35,7 @@ for sub in `cat ./Pre_processing/subjList.txt`; do
      
      # Note that we are using the | character to delimit the patterns
      # instead of the usual / character because there are / characters in the pattern.
-     
+     cp ./Pre_processing/rs_prep_origin.fsf ./Pre_processing/rs_prep.fsf
      sed -i '' "s|sub-1|${sub}|g" ./Pre_processing/rs_prep.fsf
      sed -i '' "s|ses-1|${ses_name}|g" ./Pre_processing/rs_prep.fsf
 
