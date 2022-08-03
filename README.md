@@ -198,7 +198,7 @@ After running, a directory end with .feat will be created, which contains the fo
 #### (2) Clean the re-fMRI data
 Methods: ICA cleaning; Volume sensoring; Nuisance Regression; Global signal regression; Physiology noise regression; Low pass temporal filtering; 
 
-Use the ****clean_data_ica**** to clean the data by excluding bad ICs
+Use the ***clean_data_ica*** to clean the data by excluding bad ICs
 
 - use FIX to clean the data
 - use applywarp to standardize the functional data
