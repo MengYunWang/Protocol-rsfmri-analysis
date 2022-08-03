@@ -46,7 +46,12 @@ done
 #                    -v /Users/wang/Desktop/UiB/Research_projects/BBSC/Functional/QC/Report_all:/out \
 #                    poldracklab/mriqc:latest /data /out participant
 
-#docker run -it --rm -v /Users/wang/Desktop/UiB/Research_projects/BBSC/Functional/Data/Reorganized/BIDS:/data:ro \
+# docker run -it --rm -v /Users/wang/Desktop/UiB/Research_projects/BBSC/Functional/Data/Reorganized/BIDS:/data:ro \
 #                    -v /Users/wang/Desktop/UiB/Research_projects/BBSC/Functional/QC/Report_all:/out \
 #                   poldracklab/mriqc:latest /data /out group
 
+# run preprocessing with fMRIprep
+# docker run -ti --rm -v $HOME/Desktop/BBSC/Functional/Morning/:/data:ro -v $HOME/Desktop/license.txt:/opt/freesurfer/license.txt \
+#                     -v $HOME/Desktop/BBSC/Functional/report_pre_morn:/out \
+#                     nipreps/fmriprep:latest /data /out/sub01 \
+#                     participant --participant_label 1 --longitudinal --cifti-output
