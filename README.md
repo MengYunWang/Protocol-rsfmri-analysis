@@ -200,7 +200,7 @@ Methods: ICA cleaning; Volume sensoring; Nuisance Regression; Global signal regr
 
 Use the ***clean_data_ica*** to clean the data by excluding bad ICs
 
-- use FIX to clean the data
+- use [**FIX**](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FIX) to clean the data
 - use applywarp to standardize the functional data
 
 #### (3) Further analysis
