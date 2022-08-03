@@ -1,6 +1,6 @@
 #!/bin/bash
 # created by Meng-Yun 
-# 29-July-2022
+# 03-Aug-2022
 
 # clean the data with FIX on mutisubjects with FSL
 
