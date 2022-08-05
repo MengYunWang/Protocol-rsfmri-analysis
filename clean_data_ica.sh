@@ -11,11 +11,12 @@ for sub in `cat ./subjList.txt`; do
 
     for ses_name in `cat ./$sub/sesList.txt`; do
 
-     ~/fix/fix $filepath/$sub/$ses_name/prep.feat/filtered_func_data.ica ~/fix/training_files/Standard.RData  20 -m
+     ~/fix/fix $filepath/$sub/$ses_name/prep.feat/filtered_func_data.ica ~/fix/training_files/Standard.RData  30 -m
      
      applywarp -i $filepath/$sub/$ses_name/prep.feat/filtered_func_data_clean.nii.gz \
                -r $filepath/$sub/$ses_name/prep.feat/reg/standard.nii.gz \
-               -premat=$filepath/$sub/$ses_name/prep.feat/reg/example_func2highres.mat
+               --premat=$filepath/$sub/$ses_name/prep.feat/reg/example_func2highres.mat\
+               --postmat=$filepath/$sub/$ses_name/prep.feat/reg/highres2standard.mat\
                -o $filepath/$sub/$ses_name/prep.feat/filtered_func_data_clean_standard
     done
 
