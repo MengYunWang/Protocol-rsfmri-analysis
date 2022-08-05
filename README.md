@@ -208,6 +208,8 @@ Use the ***clean_data_ica*** to clean the data by excluding bad ICs
 
 #### (3) Further analysis
 
-
+- Group ICA and dual_regression
+- 
+- FSLnet
 
 
