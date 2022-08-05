@@ -201,6 +201,8 @@ Methods: ICA cleaning; Volume sensoring; Nuisance Regression; Global signal regr
 Use the ***clean_data_ica*** to clean the data by excluding bad ICs
 
 - use [**FIX**](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FIX) to clean the data
+  
+    Tips: About linking with R in settings.py, you dont need to install R=3.4 as stated in the README (macOS), just link to your R and install the packages. First, you install the package "devtools", then use the function install_version to install the requested packages. But pay attention to the package "party", because it need several dependencies (mvtnorm, multcomp, coin as stated in README) to install. 
 - use FSL function *applywarp* to standardize the functional data
 
 #### (3) Further analysis
