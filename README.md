@@ -202,7 +202,7 @@ Use the ***clean_data_ica*** to clean the data by excluding bad ICs
 
 - use [**FIX**](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FIX) to clean the data
   
-    Tips: About linking with R in ***settings.py***(see an example up), you dont need to install R=3.4 as stated in the README (macOS), just link to your R and install the packages. First, you install the package "devtools", then use the function install_version to install the requested packages. But pay attention to the package "party", because it need several dependencies (mvtnorm, multcomp, coin as stated in README) to install. (Two freaking days messing around with the instructions in README which will never work - lingering with the compatiable issues (solving environment: failed with initial frozen solve. Retrying with flexible solve.)- coming up with this tips!)
+    Tips: About linking with R in ***settings.py***(see an example up), you dont need to install R=3.4 as stated in the README (macOS), just link to your R and install the packages. First, you install the package "devtools", then use the function install_version to install the requested packages. But pay attention to the package "party", because it need several dependencies (mvtnorm, multcomp, coin as stated in README) to install. (Two freaking days!! messing around with the instructions in README which will never work - lingering with the compatiable issues (solving environment: failed with initial frozen solve. Retrying with flexible solve.)- eventually coming up with this tips.)
     
 - use FSL function *applywarp* to standardize the functional data
 
