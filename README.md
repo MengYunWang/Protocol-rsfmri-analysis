@@ -196,7 +196,7 @@ After running, a directory end with .feat will be created, which contains the fo
 - ****design.fsf**** contains all the parameters used in the preprocessing
 
 #### (2) Clean the re-fMRI data
-Methods: ICA cleaning; Volume sensoring; Nuisance Regression; Global signal regression; Physiology noise regression; Low pass temporal filtering; 
+Methods: ICA cleaning; Nuisance Regression; Physiology noise regression; Volume sensoring; Global signal regression; Low pass temporal filtering; 
 
 Use the ***clean_data_ica*** to clean the data by excluding bad ICs
 
