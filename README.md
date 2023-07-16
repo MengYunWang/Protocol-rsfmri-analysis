@@ -1,4 +1,4 @@
-# Learning notes of the rsfMRI
+# Learning notes about the rsfMRI
 
 [How to analyze the rs-fMRI](https://www.ohbmbrainmappingblog.com/blog/ohbm-ondemand-how-to-resting-state-fmri-analysis)
 
