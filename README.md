@@ -1,4 +1,4 @@
-# My protocol of analyzing rsfMRI data
+# Learning notes of the rsfMRI
 
 [How to analyze the rs-fMRI](https://www.ohbmbrainmappingblog.com/blog/ohbm-ondemand-how-to-resting-state-fmri-analysis)
 
@@ -42,9 +42,9 @@ Moreton, F. C., Dani, K. A., Goutcher, C., O'Hare, K., & Muir, K. W. (2016). [**
 
 - **Loose connectors**
 
-We could do something about the ***psysioligical noise*** with nuisanse regreesion, ICA or GSR, but little can do with the other two. If there are some issues related to the second and third factors, you should contact technician or physicist, or even better, buy a new one! :sunglasses: :dollar:	
+We could do something about the ***physiological noise*** with nuisance regression, ICA, or GSR, but little can do with the other two. If there are issues related to the second and third factors, you should contact a technician or physicist, or even better, buy a new one! :sunglasses: :dollar:	
 
-## 2. Practical tips to record rs-fmri data
+## 2. Practical tips for recording rs-fMRI data
 
 ### (1) Eyes open, eyes closed, or cross fixation
 
@@ -85,9 +85,9 @@ docker run -it --rm -v ~/Desktop/BBSC/functional:/data:ro \ # absolute path for 
                     /data  /out  participant \ # indicate which level should be analyzed
                     --verbose-reports
 ```                    
-### Which result or parameter should we look at or emphasize on?
+### Which result or parameter should we look at or emphasize?
 [Meaning of the following indices](https://preprocessed-connectomes-project.org/quality-assessment-protocol/)
-#### (1) Structual data (T1 image)
+#### (1) Structural data (T1 image)
 - Technical quality: **E**ntropy **F**ocus **C**ritieria (***EFC***); **F**ull **W**idth at **H**alf **M**aximum (***FWHM***)
 
   **EFC**: the ***lower*** the better;
@@ -125,23 +125,23 @@ docker run -it --rm -v ~/Desktop/BBSC/functional:/data:ro \ # absolute path for 
 
 [FSLUTILS](https://open.win.ox.ac.uk/pages/fslcourse/practicals/intro3/index.html)
 
-#### (3) FSL maintools
+#### (3) FSL main tools
 
 **Segmentaion**
 
 - Brain ***Extraction*** Tool(**BET**): get rid of the skull
 
-- FMRIB´S Automated ***Segmentation*** Tool(**FAST**): segmentation of GM WM CSF (pacellation)
+- FMRIB´S Automated ***Segmentation*** Tool(**FAST**): segmentation of GM WM CSF (parcellation)
 
-- FMRIB´S Intergrated ***Registration & Segmentation*** Tool(**FIRST**): segmentation of subcortical brain
+- FMRIB´S Integrated ***Registration & Segmentation*** Tool(**FIRST**): segmentation of subcortical brain
 
-- Brain Internsity ***AbNormalities*** Classificaiton Algorithm (**BIANCA**): lesion/WMH segmentation
+- Brain Intensity ***AbNormalities*** Classification Algorithm (**BIANCA**): lesion/WMH segmentation
  
 **Registration**
 
 - FMRIB´S Linear Image ***Registration*** Tool(**FLIRT**): within subjects (ex. EPI_2_T1)
 
-    -Cost function: measure the 'goodness' of religment two images, lower better
+    -Cost function: measure the 'goodness' of realignment two images, lower better
       
       Least Squares: Same modality
       
@@ -156,7 +156,7 @@ docker run -it --rm -v ~/Desktop/BBSC/functional:/data:ro \ # absolute path for 
       Boundary-Based Registration: Within-subject EPI to structural---6DOF(rigid body:3_tranlation+3_rotation); 
                                    Initialising non-linear registration---12DOF(6_DOF+3_scallings+3_skews/shears)
     
-    -Interpolation: creat new adopted images
+    -Interpolation: create new adopted images
       
       Nearest Neighbour
       
@@ -180,29 +180,29 @@ docker run -it --rm -v ~/Desktop/BBSC/functional:/data:ro \ # absolute path for 
 
 **FDT**(FMRIB’s Diffusion Toolbox): DTI processing streamline
 
-## 5. My protocol to analyzed the rs-fMRI data
+## 5. Protocol to analyze the rs-fMRI data with FSL
 #### (1) Preprocessing
 Dicom transf > Slice time correction > Registration > Normalization > Smooth
 
-- Open FEAT gui, and go through one subject and save or find the the degsin.fsf file in the .feat directory, then rename it as you want, ***rs_prep*** in this example 
+- Open FEAT gui, and go through one subject and save or find the degsin.fsf file in the .feat directory, then rename it as you want, ***rs_prep*** in this example 
 - run the script ***pre_processing.sh*** for multi sub or runs 
 
-After running, a directory end with .feat will be created, which contains the following info:
+After running, a directory ending with .feat will be created, which contains the following info:
 
-- ****mc**** directory contains info about motion correction, such as roation and translation and FD which can used in cleaning data
+- ****mc**** directory contains info about motion correction, such as rotation and translation and FD which can be used in cleaning data
 - ****reg**** directory contains info about registration, such as from fun2str, str2standard
 - ****ica**** directory contains info about ICA
 - ****filtered_func_data.nii.gz**** is the processed data after the preprocessing
 - ****design.fsf**** contains all the parameters used in the preprocessing
 
 #### (2) Clean the re-fMRI data
-Methods: ICA cleaning; Nuisance Regression; Physiology noise regression; Volume sensoring; Global signal regression; Low pass temporal filtering; 
+Methods: ICA cleaning; Nuisance Regression; Physiology noise regression; Volume censoring; Global signal regression; Low pass temporal filtering; 
 
 Use the ***clean_data_ica*** to clean the data by excluding bad ICs
 
 - use [**FIX**](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FIX) to clean the data
   
-    Tips: About linking with R in ***settings.py***(see an example up), you dont need to install R=3.4 as stated in the README (macOS), just link to your R and install the packages. First, you install the package "devtools", then use the function install_version to install the requested packages. But pay attention to the package "party", because it need several dependencies (mvtnorm, multcomp, coin as stated in README) to install. (Two freaking days!! messing around with the instructions in README which will never work - lingering with the compatiable issues (solving environment: failed with initial frozen solve. Retrying with flexible solve.)- eventually coming up with this tips.)
+    Tips: About linking with R in ***settings.py***(see an example up), you don't need to install R=3.4 as stated in the README (macOS), just link to your R and install the packages. First, you install the package "devtools", then use the function install_version to install the requested packages. But pay attention to the package "party", because it needs several dependencies (mvtnorm, multcomp, coin as stated in README) to install. (Two freaking days!! messing around with the instructions in README which will never work - lingering with the compatible issues (solving environment: failed with initial frozen solve. Retrying with flexible solve.)- eventually coming up with these tips.)
     
 - use FSL function *applywarp* to standardize the functional data
 
